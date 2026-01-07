@@ -1,0 +1,23 @@
+# Core dependencies
+python-dateutil>=2.8.2
+pytz>=2023.3
+
+# AI/ML dependencies
+openai>=1.0.0
+langchain>=0.1.0
+langchain-openai>=0.0.5
+
+# Data handling
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# CLI interface
+rich>=13.0.0
+click>=8.1.0
+
+# Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
