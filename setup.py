@@ -31,9 +31,7 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=requirements,
-    entry_points={
-        "console_scripts": [
-            "julian=main:main",
-        ],
-    },
+    # Entry points can be added when main function is refactored
+    # Currently main() is only available when running as script
+    entry_points={},
 )

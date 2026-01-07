@@ -116,7 +116,10 @@ How can I help you today?
         """
         self._save_message("user", user_input)
         
-        # Simple command processing (dapat diperluas dengan NLP/LLM)
+        # Command processing using keyword matching
+        # Note: This is a simple rule-based approach. For more sophisticated
+        # natural language understanding, consider integrating with OpenAI GPT
+        # or LangChain in the future. See SYSTEMATICS.md for upgrade guide.
         user_input_lower = user_input.lower()
         
         # Schedule commands

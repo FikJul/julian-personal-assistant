@@ -44,8 +44,8 @@ class Config:
     @classmethod
     def validate(cls) -> bool:
         """Validate required configuration"""
-        if not cls.OPENAI_API_KEY:
-            raise ValueError("OPENAI_API_KEY is required in .env file")
+        # OPENAI_API_KEY is optional - only required for future AI/LLM features
+        # Current implementation uses rule-based processing
         return True
 
 

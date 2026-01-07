@@ -48,7 +48,12 @@ class FinanceTransaction(Base):
 
 
 class WorkTask(Base):
-    """Model for work tasks"""
+    """
+    Model for work tasks
+    
+    Note: This model is defined for future expansion. A WorkManager module
+    can be added later to provide task management capabilities.
+    """
     __tablename__ = "work_tasks"
     
     id = Column(Integer, primary_key=True)

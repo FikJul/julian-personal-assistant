@@ -4,6 +4,7 @@ Data Advisor Module
 Modul untuk memberikan saran literasi data dan statistik
 """
 from typing import List, Dict, Any, Optional
+import random
 import pandas as pd
 import numpy as np
 
@@ -74,7 +75,7 @@ class DataAdvisor:
                 all_tips.extend(tips_list)
             tips = all_tips
         
-        return np.random.choice(tips)
+        return random.choice(tips)
     
     def get_tips_by_category(self, category: str) -> List[str]:
         """Dapatkan semua tips dari kategori tertentu"""
