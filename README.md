@@ -2,6 +2,13 @@
 
 🤖 Asisten pribadi AI yang membantu Anda dalam manajemen jadwal, keuangan, dan memberikan saran literasi data & statistik.
 
+> **📚 Dokumentasi Lengkap**:
+> - 📖 [SUMMARY.md](SUMMARY.md) - **Jawaban lengkap untuk problem statement**
+> - 🏗️ [SYSTEMATICS.md](SYSTEMATICS.md) - Penjelasan detail sistematika AI Agent
+> - 📐 [ARCHITECTURE.md](ARCHITECTURE.md) - Arsitektur sistem dan design patterns
+> - 📋 [API.md](API.md) - Referensi API lengkap
+> - ⚡ [QUICKSTART.md](QUICKSTART.md) - Panduan cepat memulai
+
 ## 📋 Fitur Utama
 
 ### 1. 📅 Manajemen Jadwal
