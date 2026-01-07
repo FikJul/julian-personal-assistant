@@ -124,11 +124,11 @@ How can I help you today?
             response = self._handle_schedule_query(user_input)
         
         # Finance commands
-        elif any(word in user_input_lower for word in ["keuangan", "finance", "uang", "money", "pemasukan", "pengeluaran", "income", "expense"]):
+        elif any(word in user_input_lower for word in ["keuangan", "finance", "uang", "money", "pemasukan", "pengeluaran", "income", "expense", "saldo", "balance", "ringkasan", "summary"]):
             response = self._handle_finance_query(user_input)
         
         # Data/Statistics commands
-        elif any(word in user_input_lower for word in ["data", "statistik", "statistics", "analisis", "analysis"]):
+        elif any(word in user_input_lower for word in ["data", "statistik", "statistics", "analisis", "analysis", "visualisasi", "visualization", "tips"]):
             response = self._handle_data_query(user_input)
         
         # Help command
@@ -227,18 +227,8 @@ Pengeluaran per Kategori:
         """Handle data/statistics queries"""
         query_lower = query.lower()
         
-        if "tips" in query_lower or "saran" in query_lower:
-            tip = self.data_advisor.get_random_tip()
-            return f"💡 Tips Data & Statistik:\n\n{tip}"
-        
-        elif "kategori" in query_lower or "categories" in query_lower:
-            categories = self.data_advisor.get_all_categories()
-            response = "📚 Kategori Tips yang Tersedia:\n\n"
-            for i, cat in enumerate(categories, 1):
-                response += f"{i}. {cat.replace('_', ' ').title()}\n"
-            return response
-        
-        elif "visualisasi" in query_lower or "visualization" in query_lower:
+        # Check more specific queries first
+        if "visualisasi" in query_lower or "visualization" in query_lower:
             suggestion = self.data_advisor.suggest_visualization("numeric")
             return f"""
 📊 Saran Visualisasi Data:
@@ -247,6 +237,17 @@ Tipe Chart: {suggestion['chart_type']}
 Alasan: {suggestion['reason']}
 Library: {suggestion['library']}
 """
+        
+        elif "kategori" in query_lower or "categories" in query_lower:
+            categories = self.data_advisor.get_all_categories()
+            response = "📚 Kategori Tips yang Tersedia:\n\n"
+            for i, cat in enumerate(categories, 1):
+                response += f"{i}. {cat.replace('_', ' ').title()}\n"
+            return response
+        
+        elif "tips" in query_lower or "saran" in query_lower:
+            tip = self.data_advisor.get_random_tip()
+            return f"💡 Tips Data & Statistik:\n\n{tip}"
         
         else:
             return "📊 Untuk tips data & statistik, coba:\n- 'tips data'\n- 'kategori tips'\n- 'saran visualisasi'"
